@@ -21,6 +21,8 @@ export class DetailsPage implements OnInit {
     let index = this.route.snapshot.paramMap.get('index');
     this.pokeService.getPokemonDetails(index).subscribe(details => {
       this.details = details;
+      this.details.images.length = this.details.images.length-2;
+      console.log(this.details);
     })
   }
 
